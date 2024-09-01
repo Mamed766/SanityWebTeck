@@ -35,6 +35,12 @@ export default defineType({
       },
       validation: (Rule) => Rule.required().warning('Category is required.'),
     }),
+    defineField({
+      name: 'pricing',
+      title: 'Pricing',
+      type: 'number',
+      validation: (Rule) => Rule.required().min(0).error('Pricing cannot be negative.'),
+    }),
   ],
 
   preview: {
